@@ -1,0 +1,24 @@
+def message_builder():
+    """
+    Builds the message to send on the ROS network to the VR computer
+    Returns:
+        msg (string): the message
+    """
+    msg = ""
+    k = 'hi'
+    trans = [3.6, 6.7, 2.1]
+    rot = [1.6, 6.4, 8.6, 1.2]
+        #msg += '{}:{}^{};'.format(k, trans, rot)
+    msg += '{'
+    msg += 'name:\"{}\",pos:{},rot:{}'.format(k, trans, rot)
+    msg+= '};'
+    # remove spaces to save on space
+    print (msg)
+    return msg.replace(' ', '')
+
+
+def main():
+    print ("hello")
+
+main()
+message_builder()
